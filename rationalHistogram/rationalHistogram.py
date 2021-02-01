@@ -115,4 +115,4 @@ if __name__ == "__main__":
     std = np.random.uniform(low=0, high = 100)
     n = np.random.randint(5,high=10**6)
     data = np.random.gamma(std, size=(n))
-    x, y, bend = getBins(data)
+    bins = getBins(data)
