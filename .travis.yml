@@ -7,4 +7,4 @@ install:
   - pip install .
 # command to run tests
 script:
-  - python3 rationalhistogram/tests/test_rational_histogram.py
+  - python3 rationalHistogram/tests/test_rational_histogram.py
