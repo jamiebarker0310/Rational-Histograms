@@ -5,7 +5,6 @@ import collections
 import math
 
 
-OVERFLOW_EPSILON = 0.01
 ZERO_VAL_EPSILON = 0.1
 MIN_BIN = 10
 BASE_VALS = [1, 2, 2.5, 5]
@@ -52,7 +51,7 @@ def getBins(data):
             data_binned = np.digitize(data, bins=bins)
             bin_count = np.bincount(data_binned)
             # ensure sufficient bins are being used
-            if len(bins) == len(bin_count) and len(bins)>MIN_BIN:
+            if len(bins) == len(bin_count) and len(bins)>=MIN_BIN:
                 # calculate the bend energy to estimate smoothness
                 bend = calculateBend(bins, bin_count)
                 # if bend energy is lowest, set optimal bins
@@ -75,6 +74,7 @@ def freedmanDiaconus(data):
     Returns:
         float: Freedman Diaconus value
     """
+    n = len(data)
     # calculate quartiles
     x_q1, x_q3 = np.percentile(data, [25, 75])
     # calculate n data
@@ -82,7 +82,7 @@ def freedmanDiaconus(data):
     # calculate IQR
     x_iqr = x_q3 - x_q1
     # calculate Freedman Diaconus
-    freedman_diaconus = 2*x_iqr*(n**(-1/3))
+    freedman_diaconus = 2*x_iqr*n**(-1.0/3.0)
     return freedman_diaconus
   
   
@@ -107,6 +107,14 @@ def calculateBend(x, y):
     # return bend energy
     return bend_energy
 
+def baseVals():
+    return BASE_VALS
+
+def zeroValEpsilon():
+    return ZERO_VAL_EPSILON
+
+def minBin():
+    return MIN_BIN
 
 
 
