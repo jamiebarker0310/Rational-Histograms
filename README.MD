@@ -9,5 +9,6 @@ The library finds the user bin sizes for a data to try and meet the following cr
 - **Smooth** - The algorithm attempts to find a smooth histogram using cubic splining and bend energy to estimate smoothness.
 
 This is useful for when wanting to present simple findings in an easy to understand manner. Below is an example of how the package can be used in conjunction with the Seaborn package.
+
 <img src="https://user-images.githubusercontent.com/37461124/106815523-e554b600-666b-11eb-9cae-349dfc06df7c.png" width="400"/>
 
