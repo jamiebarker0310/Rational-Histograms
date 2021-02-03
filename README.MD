@@ -1,4 +1,5 @@
-[![Build Status](https://www.travis-ci.com/jamiebarker0310/Rational-Histograms.svg?branch=main)](https://www.travis-ci.com/jamiebarker0310/Rational-Histograms)# Rational-Histograms
+[![Build Status](https://www.travis-ci.com/jamiebarker0310/Rational-Histograms.svg?branch=main)](https://www.travis-ci.com/jamiebarker0310/Rational-Histograms)# 
+# Rational-Histograms
 Rational Histograms is a Python package that fits "sensible" bins to histograms as an alternative to the default methods used in MatplotLib and Seaborn.
 
 The library finds the user bin sizes for a data to try and meet the following criteria:
